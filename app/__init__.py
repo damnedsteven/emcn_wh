@@ -3,22 +3,24 @@ from flask_sqlalchemy import SQLAlchemy
 from config import basedir, SQLALCHEMY_DATABASE_URI, ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD, DOMAIN
 from .momentjs import momentjs
 
+
 app = Flask(__name__)
 app.config.from_object('config')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 app.jinja_env.globals['momentjs'] = momentjs
 db = SQLAlchemy(app)
+
 ###
 import os
-from flask_login import LoginManager
-from flask_openid import OpenID
+from flask_login import LoginManager, UserMixin
+# from flask_openid import OpenID
 from config import basedir
 
 lm = LoginManager()
 lm.init_app(app)
 lm.login_view = 'login'
-oid = OpenID(app, os.path.join(basedir, 'tmp'))
+# oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
 from flask_mail import Mail
 mail = Mail(app)

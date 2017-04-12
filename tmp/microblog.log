@@ -839,3 +839,827 @@ Traceback (most recent call last):
   File "/srv/proj/flask/microblog/app/views.py", line 163, in search_results
     results = Post.query.whoosh_search(query, MAX_SEARCH_RESULTS).all()
 AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
+2017-03-28 15:09:17,615 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:55]
+2017-04-02 15:43:32,428 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:55]
+2017-04-02 15:47:34,326 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:55]
+2017-04-10 16:09:16,918 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-10 16:15:43,572 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-10 16:16:33,061 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-10 16:17:07,136 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-10 21:28:28,689 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-10 21:28:40,006 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-10 21:29:18,761 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-10 21:29:53,799 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-10 21:31:10,838 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-10 21:31:17,202 ERROR: Exception on /login [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/app/views.py", line 48, in login
+    form=form)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/login.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/microblog/app/templates/base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/microblog/app/templates/login.html", line 29, in block "content"
+    <div class="control-group{% if form.openid.errors %} error{% endif %}">
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.LoginForm object' has no attribute 'openid'
+2017-04-10 21:31:24,662 ERROR: Exception on /login [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/app/views.py", line 48, in login
+    form=form)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/login.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/microblog/app/templates/base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/microblog/app/templates/login.html", line 29, in block "content"
+    <div class="control-group{% if form.openid.errors %} error{% endif %}">
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.LoginForm object' has no attribute 'openid'
+2017-04-10 21:31:30,690 ERROR: Exception on /login [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/app/views.py", line 48, in login
+    form=form)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/login.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/microblog/app/templates/base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/microblog/app/templates/login.html", line 29, in block "content"
+    <div class="control-group{% if form.openid.errors %} error{% endif %}">
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.LoginForm object' has no attribute 'openid'
+2017-04-10 21:32:48,995 ERROR: Exception on /login [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/app/views.py", line 48, in login
+    form=form)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/login.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/microblog/app/templates/base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/microblog/app/templates/login.html", line 29, in block "content"
+    <div class="control-group{% if form.openid.errors %} error{% endif %}">
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.LoginForm object' has no attribute 'openid'
+2017-04-11 09:55:26,244 ERROR: Exception on /signup [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/app/views.py", line 52, in signup
+    form = RegisterForm()
+NameError: name 'RegisterForm' is not defined
+2017-04-11 09:55:46,681 ERROR: Exception on /signup [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/app/views.py", line 52, in signup
+    form = RegisterForm()
+NameError: name 'RegisterForm' is not defined
+2017-04-11 10:32:25,490 ERROR: Exception on /signup [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/app/views.py", line 52, in signup
+    form = RegisterForm()
+NameError: name 'RegisterForm' is not defined
+2017-04-11 10:32:48,690 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-11 10:32:54,677 ERROR: Exception on /signup [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/app/views.py", line 62, in signup
+    return render_template('signup.html', form=form)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/signup.html", line 1, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap/base.html
+2017-04-11 10:34:24,851 ERROR: Exception on /signup [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/app/views.py", line 62, in signup
+    return render_template('signup.html', form=form)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/signup.html", line 1, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap/base.html
+2017-04-11 17:11:56,664 ERROR: Exception on /signup [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/app/views.py", line 62, in signup
+    return render_template('signup.html', form=form)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/signup.html", line 4, in top-level template code
+    <!-- {% import "bootstrap/wtf.html" as wtf %} -->
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap/wtf.html
+2017-04-11 17:12:10,681 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-11 17:12:16,761 ERROR: Exception on /signup [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/app/views.py", line 62, in signup
+    return render_template('signup.html', form=form)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/signup.html", line 4, in top-level template code
+    <!-- {% import "bootstrap/wtf.html" as wtf %} -->
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap/wtf.html
+2017-04-11 17:14:53,384 ERROR: Exception on /login [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/app/views.py", line 48, in login
+    form=form)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/login.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/microblog/app/templates/base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/microblog/app/templates/login.html", line 29, in block "content"
+    <div class="control-group{% if form.openid.errors %} error{% endif %}">
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.forms.LoginForm object' has no attribute 'openid'
+2017-04-12 13:54:12,588 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-12 14:13:54,196 ERROR: Exception on /user/esophagus [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/microblog/app/views.py", line 119, in user
+    posts=posts)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/microblog/app/templates/base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/microblog/app/templates/user.html", line 24, in block "content"
+    {% include 'post.html' %}
+  File "/srv/proj/flask/microblog/app/templates/post.html", line 3, in top-level template code
+    <td width="70px"><a href="{{ url_for('user', nickname=post.author.nickname) }}"><img src="{{ post.author.avatar(70) }}" /></a></td>
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/helpers.py", line 305, in url_for
+    force_external=external)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/werkzeug/routing.py", line 1758, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['nickname']. Did you forget to specify values ['page', 'username']?
+2017-04-12 14:18:29,185 ERROR: Exception on /user/esophagus [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/microblog/app/views.py", line 119, in user
+    posts=posts)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/microblog/app/templates/base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/microblog/app/templates/user.html", line 24, in block "content"
+    {% include 'post.html' %}
+  File "/srv/proj/flask/microblog/app/templates/post.html", line 3, in top-level template code
+    <td width="70px"><a href="{{ url_for('user', nickname=post.author.nickname) }}"><img src="{{ post.author.avatar(70) }}" /></a></td>
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/helpers.py", line 305, in url_for
+    force_external=external)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/werkzeug/routing.py", line 1758, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['nickname']. Did you forget to specify values ['page', 'username']?
+2017-04-12 14:18:47,346 ERROR: Exception on /user/esophagus [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/microblog/app/views.py", line 119, in user
+    posts=posts)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/microblog/app/templates/base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/microblog/app/templates/user.html", line 24, in block "content"
+    {% include 'post.html' %}
+  File "/srv/proj/flask/microblog/app/templates/post.html", line 3, in top-level template code
+    <td width="70px"><a href="{{ url_for('user', nickname=post.author.nickname) }}"><img src="{{ post.author.avatar(70) }}" /></a></td>
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/helpers.py", line 305, in url_for
+    force_external=external)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/werkzeug/routing.py", line 1758, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['nickname']. Did you forget to specify values ['page', 'username']?
+2017-04-12 14:29:51,233 ERROR: Exception on /user/esophagus [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/microblog/app/views.py", line 119, in user
+    posts=posts)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/app/templates/user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/srv/proj/flask/microblog/app/templates/base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "/srv/proj/flask/microblog/app/templates/user.html", line 24, in block "content"
+    {% include 'post.html' %}
+  File "/srv/proj/flask/microblog/app/templates/post.html", line 3, in top-level template code
+    <td width="70px"><a href="{{ url_for('user', nickname=post.author.nickname) }}"><img src="{{ post.author.avatar(70) }}" /></a></td>
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/helpers.py", line 305, in url_for
+    force_external=external)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/werkzeug/routing.py", line 1758, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['nickname']. Did you forget to specify values ['page', 'username']?
+2017-04-12 14:31:32,038 ERROR: Exception on /edit [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/microblog/app/views.py", line 124, in edit
+    form = EditForm(g.user.username)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/srv/proj/flask/microblog/app/forms.py", line 24, in __init__
+    Form.__init__(self, *args, **kwargs)
+NameError: name 'Form' is not defined
+2017-04-12 14:33:34,261 INFO: microblog startup [in /srv/proj/flask/microblog/app/__init__.py:50]
+2017-04-12 14:53:42,559 ERROR: Exception on /login [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+  File "/srv/proj/flask/microblog/app/views.py", line 48, in login
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 127, in render_template
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 830, in get_template
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 804, in _load_template
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/loaders.py", line 113, in load
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 64, in get_source
+jinja2.exceptions.TemplateNotFound: login.html
+2017-04-12 14:53:44,463 ERROR: Exception on /login [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+  File "/srv/proj/flask/microblog/app/views.py", line 48, in login
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 127, in render_template
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 830, in get_template
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/environment.py", line 804, in _load_template
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/jinja2/loaders.py", line 113, in load
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/templating.py", line 64, in get_source
+jinja2.exceptions.TemplateNotFound: login.html
+2017-04-12 14:56:24,597 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-12 14:59:23,005 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-12 15:00:04,602 ERROR: Exception on /search_results/aasdf [GET] [in /usr/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/emcn/app/views.py", line 186, in search_results
+    results = Post.query.whoosh_search(query, MAX_SEARCH_RESULTS).all()
+AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
+2017-04-12 15:12:33,922 ERROR: Exception on /login [GET] [in /usr/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/emcn/app/views.py", line 48, in login
+    form=form)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/emcn/app/templates/base.html", line 44, in template
+    {% block content %}{% endblock %}
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/srv/proj/flask/emcn/app/templates/login.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/emcn/app/templates/base.html", line 44, in template
+    {% block content %}{% endblock %}
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/usr/lib/python3.5/site-packages/jinja2/parser.py", line 896, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/usr/lib/python3.5/site-packages/jinja2/parser.py", line 878, in subparse
+    rv = self.parse_statement()
+  File "/usr/lib/python3.5/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/usr/lib/python3.5/site-packages/jinja2/parser.py", line 212, in parse_if
+    'name:endif'))
+  File "/usr/lib/python3.5/site-packages/jinja2/parser.py", line 170, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/usr/lib/python3.5/site-packages/jinja2/parser.py", line 104, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/usr/lib/python3.5/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "/usr/lib/python3.5/site-packages/jinja2/parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2017-04-12 15:14:07,680 ERROR: Exception on /signup [POST] [in /usr/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+pyodbc.IntegrityError: ('23000', "[23000] [FreeTDS][SQL Server]Cannot insert duplicate key row in object 'dbo.user' with unique index 'ix_user_email'. (2601) (SQLExecDirectW)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/emcn/app/views.py", line 57, in signup
+    db.session.commit()
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/session.py", line 874, in commit
+    self.transaction.commit()
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/session.py", line 2139, in flush
+    self._flush(objects)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/session.py", line 2259, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/util/compat.py", line 187, in reraise
+    raise value
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/session.py", line 2223, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/orm/persistence.py", line 835, in _emit_insert_statements
+    execute(statement, params)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/util/compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/usr/local/lib/python3.5/dist-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (pyodbc.IntegrityError) ('23000', "[23000] [FreeTDS][SQL Server]Cannot insert duplicate key row in object 'dbo.user' with unique index 'ix_user_email'. (2601) (SQLExecDirectW)") [SQL: 'INSERT INTO [user] (username, email, password, about_me, last_seen) OUTPUT inserted.id VALUES (?, ?, ?, ?, ?)'] [parameters: ('esophagus', 'yi.li5@hpe.com', 'sha256$XGaaD3cO$f675353efe495ac82734433ca05b1059fd5d53782bd882483c7edbb98320e03a', None, None)]
+2017-04-12 15:16:05,799 ERROR: Exception on /follow/Yi [GET] [in /usr/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/emcn/app/views.py", line 154, in follow
+    follower_notification(user, g.user)
+  File "/srv/proj/flask/emcn/app/emails.py", line 20, in follower_notification
+    send_email("[microblog] %s is now following you!" % follower.nickname,
+  File "/usr/local/lib/python3.5/dist-packages/werkzeug/local.py", line 343, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-04-12 15:19:30,506 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-12 15:22:01,199 ERROR: Exception on /follow/esophagus [GET] [in /usr/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/emcn/app/views.py", line 154, in follow
+    follower_notification(user, g.user)
+  File "/srv/proj/flask/emcn/app/emails.py", line 24, in follower_notification
+    user=followed, follower=follower),
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/usr/lib/python3.5/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/emcn/app/templates/follower_email.txt", line 5, in top-level template code
+    {{ url_for("user", nickname=follower.nickname, _external=True) }}
+  File "/usr/lib/python3.5/site-packages/flask/helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib/python3.5/site-packages/flask/app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/lib/python3.5/site-packages/flask/helpers.py", line 305, in url_for
+    force_external=external)
+  File "/usr/local/lib/python3.5/dist-packages/werkzeug/routing.py", line 1758, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['nickname']. Did you forget to specify values ['page', 'username']?

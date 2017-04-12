@@ -1,6 +1,8 @@
 from app import db
 from hashlib import md5
 
+from flask_login import UserMixin
+
 from app import app
 
 import sys
@@ -15,10 +17,11 @@ followers = db.Table('followers',
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nickname = db.Column(db.String(64), index=True, unique=True)
+    username = db.Column(db.String(15), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
+    password = db.Column(db.String(80))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime)
@@ -48,22 +51,22 @@ class User(db.Model):
             return str(self.id)  # python 3
 		
     def __repr__(self):
-        return '<User %r>' % (self.nickname)
+        return '<User %r>' % (self.username)
 	
     def avatar(self, size):
         return 'http://www.gravatar.com/avatar/%s?d=mm&s=%d' % (md5(self.email.encode('utf-8')).hexdigest(), size)
 
     @staticmethod
-    def make_unique_nickname(nickname):
-        if User.query.filter_by(nickname=nickname).first() is None:
-            return nickname
+    def make_unique_username(username):
+        if User.query.filter_by(username=username).first() is None:
+            return username
         version = 2
         while True:
-            new_nickname = nickname + str(version)
-            if User.query.filter_by(nickname=new_nickname).first() is None:
+            new_username = username + str(version)
+            if User.query.filter_by(username=new_username).first() is None:
                 break
             version += 1
-        return new_nickname
+        return new_username
 
     def follow(self, user):
         if not self.is_following(user):
