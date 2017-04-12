@@ -9,7 +9,7 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://sa:support@MSSQL-PYTHON-TEST'
+SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://sa:support@MSSQL-PYTHON-EMCN'
 
 WTF_CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'

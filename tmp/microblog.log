@@ -1663,3 +1663,298 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.5/dist-packages/werkzeug/routing.py", line 1758, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['nickname']. Did you forget to specify values ['page', 'username']?
+2017-04-12 15:56:18,908 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-12 16:16:12,566 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-12 16:16:19,065 ERROR: Exception on /logout [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+pyodbc.ProgrammingError: ('42S22', "[42S22] [FreeTDS][SQL Server]Invalid column name 'username'. (207) (SQLExecDirectW)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1473, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1666, in preprocess_request
+    rv = func()
+  File "/srv/proj/flask/emcn/app/views.py", line 96, in before_request
+    if g.user.is_authenticated:
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/werkzeug/local.py", line 343, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/werkzeug/local.py", line 302, in _get_current_object
+    return self.__local()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/utils.py", line 302, in _get_user
+    current_app.login_manager._load_user()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/login_manager.py", line 317, in _load_user
+    return self.reload_user()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/login_manager.py", line 279, in reload_user
+    user = self.user_callback(user_id)
+  File "/srv/proj/flask/emcn/app/views.py", line 67, in load_user
+    return User.query.get(int(id))
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 859, in get
+    return self._get_impl(ident, loading.load_on_ident)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 892, in _get_impl
+    return fallback_fn(self, key)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/loading.py", line 223, in load_on_ident
+    return q.one()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2790, in one
+    ret = self.one_or_none()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2760, in one_or_none
+    ret = list(self)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2831, in __iter__
+    return self._execute_and_instances(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2854, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (pyodbc.ProgrammingError) ('42S22', "[42S22] [FreeTDS][SQL Server]Invalid column name 'username'. (207) (SQLExecDirectW)") [SQL: 'SELECT [user].id AS user_id, [user].username AS user_username, [user].email AS user_email, [user].password AS user_password, [user].about_me AS user_about_me, [user].last_seen AS user_last_seen \nFROM [user] \nWHERE [user].id = ?'] [parameters: (3,)]
+2017-04-12 16:16:29,406 ERROR: Exception on / [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+pyodbc.ProgrammingError: ('42S22', "[42S22] [FreeTDS][SQL Server]Invalid column name 'username'. (207) (SQLExecDirectW)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1473, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1666, in preprocess_request
+    rv = func()
+  File "/srv/proj/flask/emcn/app/views.py", line 96, in before_request
+    if g.user.is_authenticated:
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/werkzeug/local.py", line 343, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/werkzeug/local.py", line 302, in _get_current_object
+    return self.__local()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/utils.py", line 302, in _get_user
+    current_app.login_manager._load_user()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/login_manager.py", line 317, in _load_user
+    return self.reload_user()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/login_manager.py", line 279, in reload_user
+    user = self.user_callback(user_id)
+  File "/srv/proj/flask/emcn/app/views.py", line 67, in load_user
+    return User.query.get(int(id))
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 859, in get
+    return self._get_impl(ident, loading.load_on_ident)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 892, in _get_impl
+    return fallback_fn(self, key)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/loading.py", line 223, in load_on_ident
+    return q.one()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2790, in one
+    ret = self.one_or_none()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2760, in one_or_none
+    ret = list(self)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2831, in __iter__
+    return self._execute_and_instances(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2854, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (pyodbc.ProgrammingError) ('42S22', "[42S22] [FreeTDS][SQL Server]Invalid column name 'username'. (207) (SQLExecDirectW)") [SQL: 'SELECT [user].id AS user_id, [user].username AS user_username, [user].email AS user_email, [user].password AS user_password, [user].about_me AS user_about_me, [user].last_seen AS user_last_seen \nFROM [user] \nWHERE [user].id = ?'] [parameters: (3,)]
+2017-04-12 16:16:31,278 ERROR: Exception on / [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+pyodbc.ProgrammingError: ('42S22', "[42S22] [FreeTDS][SQL Server]Invalid column name 'username'. (207) (SQLExecDirectW)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1473, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1666, in preprocess_request
+    rv = func()
+  File "/srv/proj/flask/emcn/app/views.py", line 96, in before_request
+    if g.user.is_authenticated:
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/werkzeug/local.py", line 343, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/werkzeug/local.py", line 302, in _get_current_object
+    return self.__local()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/utils.py", line 302, in _get_user
+    current_app.login_manager._load_user()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/login_manager.py", line 317, in _load_user
+    return self.reload_user()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/login_manager.py", line 279, in reload_user
+    user = self.user_callback(user_id)
+  File "/srv/proj/flask/emcn/app/views.py", line 67, in load_user
+    return User.query.get(int(id))
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 859, in get
+    return self._get_impl(ident, loading.load_on_ident)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 892, in _get_impl
+    return fallback_fn(self, key)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/loading.py", line 223, in load_on_ident
+    return q.one()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2790, in one
+    ret = self.one_or_none()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2760, in one_or_none
+    ret = list(self)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2831, in __iter__
+    return self._execute_and_instances(context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2854, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (pyodbc.ProgrammingError) ('42S22', "[42S22] [FreeTDS][SQL Server]Invalid column name 'username'. (207) (SQLExecDirectW)") [SQL: 'SELECT [user].id AS user_id, [user].username AS user_username, [user].email AS user_email, [user].password AS user_password, [user].about_me AS user_about_me, [user].last_seen AS user_last_seen \nFROM [user] \nWHERE [user].id = ?'] [parameters: (3,)]
+2017-04-12 16:19:15,284 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-12 16:19:29,002 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-12 16:19:35,086 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-12 16:19:46,145 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-12 16:19:56,452 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:50]
+2017-04-12 16:38:47,359 ERROR: Exception on /index [POST] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+pyodbc.ProgrammingError: ('42000', "[42000] [FreeTDS][SQL Server]Incorrect syntax near ','. (102) (SQLExecDirectW)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/srv/proj/flask/emcn/app/views.py", line 25, in index
+    db.session.commit()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 874, in commit
+    self.transaction.commit()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2139, in flush
+    self._flush(objects)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2259, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 187, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2223, in _flush
+    flush_context.execute()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 835, in _emit_insert_statements
+    execute(statement, params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (pyodbc.ProgrammingError) ('42000', "[42000] [FreeTDS][SQL Server]Incorrect syntax near ','. (102) (SQLExecDirectW)") [SQL: 'INSERT INTO post (body, timestamp, user_id) OUTPUT inserted.id VALUES (?, ?, ?)'] [parameters: ('Logo写文章 注册登录 首页 下载App  搜索 摩拜单车爬虫源码及解析 144  作者 我是思聪 关注 2017.03.04 23:13* 字数 890 阅读 3405评论 19喜欢 65 前两篇文章分析了我为什么抓取摩拜单车的接口以及数据分析的结果，这篇文章中讲直接提供可运', datetime.datetime(2017, 4, 12, 8, 38, 47, 354139), 1)]
