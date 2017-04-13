@@ -1958,3 +1958,122 @@ Traceback (most recent call last):
   File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
     cursor.execute(statement, parameters)
 sqlalchemy.exc.ProgrammingError: (pyodbc.ProgrammingError) ('42000', "[42000] [FreeTDS][SQL Server]Incorrect syntax near ','. (102) (SQLExecDirectW)") [SQL: 'INSERT INTO post (body, timestamp, user_id) OUTPUT inserted.id VALUES (?, ?, ?)'] [parameters: ('Logo写文章 注册登录 首页 下载App  搜索 摩拜单车爬虫源码及解析 144  作者 我是思聪 关注 2017.03.04 23:13* 字数 890 阅读 3405评论 19喜欢 65 前两篇文章分析了我为什么抓取摩拜单车的接口以及数据分析的结果，这篇文章中讲直接提供可运', datetime.datetime(2017, 4, 12, 8, 38, 47, 354139), 1)]
+2017-04-12 21:00:40,421 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:48]
+2017-04-12 21:02:40,508 ERROR: Exception on /signup [POST] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+pyodbc.IntegrityError: ('23000', "[23000] [FreeTDS][SQL Server]Cannot insert duplicate key row in object 'dbo.user' with unique index 'ix_user_email'. (2601) (SQLExecDirectW)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/proj/flask/emcn/app/views.py", line 56, in signup
+    db.session.commit()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 874, in commit
+    self.transaction.commit()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2139, in flush
+    self._flush(objects)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2259, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 187, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2223, in _flush
+    flush_context.execute()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 835, in _emit_insert_statements
+    execute(statement, params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (pyodbc.IntegrityError) ('23000', "[23000] [FreeTDS][SQL Server]Cannot insert duplicate key row in object 'dbo.user' with unique index 'ix_user_email'. (2601) (SQLExecDirectW)") [SQL: 'INSERT INTO [user] (username, email, password, about_me, last_seen) OUTPUT inserted.id VALUES (?, ?, ?, ?, ?)'] [parameters: ('yi.li2', 'yi.li5@hpe.com', 'sha256$yzxJcjd7$ae99fd040d6d085375121a6b3aaee5616f395a8fa8bae5ddd2ccbd97a771cfe9', None, None)]
+2017-04-12 23:34:18,594 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:48]
+2017-04-12 23:34:24,770 ERROR: Exception on /user/yi.li [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1473, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1666, in preprocess_request
+    rv = func()
+TypeError: after_login() missing 1 required positional argument: 'resp'
+2017-04-12 23:34:34,391 ERROR: Exception on / [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1473, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1666, in preprocess_request
+    rv = func()
+TypeError: after_login() missing 1 required positional argument: 'resp'
+2017-04-12 23:34:36,300 ERROR: Exception on / [GET] [in /srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1473, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/srv/proj/flask/microblog/env/lib/python3.5/site-packages/flask/app.py", line 1666, in preprocess_request
+    rv = func()
+TypeError: after_login() missing 1 required positional argument: 'resp'
+2017-04-12 23:35:45,643 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:48]
+2017-04-13 00:12:48,123 INFO: microblog startup [in /srv/proj/flask/emcn/app/__init__.py:48]

@@ -1,6 +1,5 @@
 from flask import render_template, flash, redirect, session, url_for, request, g
 from flask_login import login_user, logout_user, current_user, login_required
-# from app import app, db, lm, oid
 from app import app, db, lm
 from .forms import LoginForm, RegisterForm, EditForm, PostForm, SearchForm
 from .models import User, Post
@@ -55,6 +54,9 @@ def signup():
         new_user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
+		# make the user follow him/herself
+        db.session.add(new_user.follow(new_user))
+        db.session.commit()
 		
         return redirect(url_for('index'))
         # return '<h1>New user has been created!</h1>'
@@ -66,7 +68,7 @@ def signup():
 def load_user(id):
     return User.query.get(int(id))
 
-# @oid.after_login
+# @login_required
 def after_login(resp):
     if resp.email is None or resp.email == "":
         flash(gettext('Invalid login. Please try again.'))

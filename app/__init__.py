@@ -14,13 +14,11 @@ db = SQLAlchemy(app)
 ###
 import os
 from flask_login import LoginManager, UserMixin
-# from flask_openid import OpenID
 from config import basedir
 
 lm = LoginManager()
 lm.init_app(app)
 lm.login_view = 'login'
-# oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
 from flask_mail import Mail
 mail = Mail(app)
